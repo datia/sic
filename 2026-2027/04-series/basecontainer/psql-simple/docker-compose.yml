@@ -1,0 +1,17 @@
+version: '3'
+name: SIC-SALES
+services:
+  database:
+    image: postgres:17
+    container_name: SIC_DB
+    restart: always
+    ports:
+      - "127.0.0.1:5432:5432"
+    command: postgres -c config_file=/etc/postgresql/postgresql.conf
+    volumes:
+      - ./data:/var/lib/postgresql/data
+      - ./my-postgres.conf:/etc/postgresql/postgresql.conf
+      - ./setup-master:/docker-entrypoint-initdb.d
+    environment:
+      - 'POSTGRES_PASSWORD=a_passwd552'
+      - 'POSTGRES_DB=sic_sales'
