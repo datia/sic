@@ -1,6 +1,6 @@
 /**
  * 
- * ND, 2025
+ * ND, 2025-2026
  * */
  CREATE SCHEMA IF NOT EXISTS retail;
 
